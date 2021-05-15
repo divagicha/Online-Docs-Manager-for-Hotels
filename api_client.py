@@ -10,6 +10,8 @@ logger = log.getTimedLogger()
 m = 0       # files found
 n = 0       # files created
 p = 0       # files downloaded
+
+email_address = 'ENTER YOUR EMAIL HERE'
     
 def syntax_display_msg():
     logger.info('syntax for read: python uploader.py -r [-d <dd/mm/yyyy>]')
@@ -240,7 +242,7 @@ def share_file(file_id):
     user_permission = {
         'type': 'user',
         'role': 'writer',
-        'emailAddress': 'rishikesh.maaganga@gmail.com'
+        'emailAddress': email_address
     }
     batch.add(drive_service.permissions().create(
             fileId=file_id,

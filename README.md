@@ -83,7 +83,8 @@ This project requires Python (3.6 or higher) to be installed on the user system.
 	pip install -r requirements.txt
 	```
 10. Open 'config.ini' in Extras folder and fill in the desired parameters value (MOST IMPORTANT)
-11. Done! Now simply run the desired application, 'Scan n Upload.exe' to first scan the ID (using connected scanner) and then upload it cloud or 'Online Docs Manager.exe' to perform other operation like reading and saving previously uploaded IDs.
+11. Open 'api_client.py' and enter your GMAIL email ID in the 'email_address' parameter for the application to share uploaded file to this GDrive account
+12. Done! Now simply run the desired application, 'Scan n Upload.exe' to first scan the ID (using connected scanner) and then upload it cloud or 'Online Docs Manager.exe' to perform other operation like reading and saving previously uploaded IDs.
 
 
 
