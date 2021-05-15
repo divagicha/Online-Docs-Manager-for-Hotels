@@ -44,7 +44,7 @@
 <!-- ABOUT -->
 ## About The Project
 
-As it's a usual process and task to take ID proof of all the guests arriving at the hotel to stay, instead of making copies of the ID, which consumes so much paper and difficult to maintain record of, we can upload a pic of that ID directly to google cloud with the ease to access it hierarchically in date-wise format with your own GDrive account.
+As it's a usual process and task to take ID proof of all the guests arriving at the hotel to stay, instead of making copies of the ID, which consumes so much paper and is difficult to maintain record of, we can upload a pic of that ID directly to google cloud with the ease to access it hierarchically in date-wise format with your own GDrive account.
 
 
 
@@ -59,14 +59,14 @@ This project requires Python (3.6 or higher) to be installed on the user system.
 ### Installation (for Windows only)
 
 1. Register for a account with [Google Cloud Platform](https://cloud.google.com/) at and head to [Console](https://console.cloud.google.com/) page.
-2. Next you will need a Google Cloud Platform (GCP) project to hold your credentials, as this project uses OAuth 2.0 for authorization. Follow the steps at https://developers.google.com/assistant/sdk/guides/configure-developer-project to generate a file "client_secret_<client-id>.json".
-3. Rename the file to "client_secret.json" and move it to Extras folder.
-4. Clone the repo
+2. Next you will need a Google Cloud Platform (GCP) project to hold your credentials, as this project uses OAuth 2.0 for authorization. Follow the steps at https://developers.google.com/assistant/sdk/guides/configure-developer-project to generate "client_secret_<client-id>.json" file.
+3. Clone the repo
 	```sh
 	git clone https://github.com/DivAgicha/Online-Docs-Manager-for-Hotels.git
 	```
-5. Change the directory to "Online-Docs-Manager-for-Hotels"
-6. Open command prompt / shell to install 'venv' python package, used for creating a virtual environment
+4. Change the directory to "Online-Docs-Manager-for-Hotels".
+5. Rename the JSON file downloaded in _Step 2_ to "client_secret.json" and move it to Extras folder.
+6. Open command prompt in the project directory to install 'virtualenv' python package, used for creating a virtual environment
 	```sh
 	pip install virtualenv
 	```
@@ -82,8 +82,8 @@ This project requires Python (3.6 or higher) to be installed on the user system.
 	```sh
 	pip install -r requirements.txt
 	```
-10. Open 'config.ini' in Extras folder and fill in the desired parameters value (MOST IMPORTANT)
-11. Open 'api_client.py' and enter your GMAIL email ID in the 'email_address' parameter for the application to share uploaded file to this GDrive account
+10. Open 'config.ini' in Extras folder and fill in the desired parameters value. (MOST IMPORTANT)
+11. Open 'api_client.py' and enter your GMAIL email ID in the 'email_address' parameter for the application to share uploaded file to this GDrive account.
 12. Done! Now simply run the desired application, 'Scan n Upload.exe' to first scan the ID (using connected scanner) and then upload it cloud or 'Online Docs Manager.exe' to perform other operation like reading and saving previously uploaded IDs.
 
 
