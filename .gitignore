@@ -1,5 +1,6 @@
 __pycache__/*
+.idea/*
 venv-py3/*
-logs/*.txt.*
-Extras/client*.json
+logs/*
+Extras/client_secret.json
 Extras/quickstart.py

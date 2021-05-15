@@ -12,21 +12,24 @@ n = 0       # files created
 p = 0       # files downloaded
 
 email_address = 'ENTER YOUR EMAIL HERE'
-    
+
+
 def syntax_display_msg():
     logger.info('syntax for read: python uploader.py -r [-d <dd/mm/yyyy>]')
     logger.info('syntax for save: python uploader.py -s -d <dd/mm/yyyy>')
     logger.info('syntax for upload: python uploader.py [-d <dd/mm/yyyy>]')
     logger.info('syntax for delete: python uploader.py --delete <file_id>')
     sys.exit(2)
-    
+
+
 def validate_date(datestring):
     try:
         logger.info('validating date \''+datestring+'\'')
         return datetime.datetime.strptime(datestring, '%d/%m/%Y').strftime("%Y\\%b\\%d")
     except ValueError:
         syntax_display_msg()
-        
+
+
 # returns 'mimetype:extension'
 def get_mimetype(filename):
     try:
@@ -65,12 +68,16 @@ def query_files(entered_date=None, extended_query=None, file_id=None):
         logger.error('Exception: '+str(e))
         return {'files': []}
 
+
 def read_files(entered_date):
     response = query_files(entered_date)
-                                    
-    logger.info(str(len(response['files']))+' FILES FOUND')
-    logger.info('RESPONSE --> '+str(response))
-    
+
+    files = response['files']
+    files_formatted = "\n".join([f"{i+1}. {file['id']} (NAME: {file['name']})" for i, file in enumerate(files)])
+    logger.info(str(len(files))+' FILES FOUND')
+    logger.info('RESPONSE --> \n'+str(files_formatted))
+
+
 def download_file(file, file_storage_dir):
     global p
     
@@ -90,7 +97,8 @@ def download_file(file, file_storage_dir):
     except Exception as e:
         logger.error('Exception: '+str(e))
         logger.info('DOWNLOAD FAILED')
-    
+
+
 def save_files(entered_date):
     global p
     logger.info('checking files for the given date...')
@@ -112,6 +120,7 @@ def save_files(entered_date):
             
         logger.info(str(p)+'/'+str(len(response['files']))+' files downloaded')
 
+
 def delete_file(file_id):
     try:
         logger.info('checking for the existence of file \''+file_id+'\'...')
@@ -128,7 +137,8 @@ def delete_file(file_id):
     except Exception as e:
         logger.error('Exception: '+str(e))
         logger.info('FILE NOT DELETED!!!')
-    
+
+
 def search_folder(folder_name, parent_folder_id):
     logger.info('searching folder \''+folder_name+'\'... ')
     
@@ -145,7 +155,8 @@ def search_folder(folder_name, parent_folder_id):
     else:
         logger.info('folder does not exist')
         return None
-        
+
+
 def create_folder(folder_name, parents_list=None):
     try:
         logger.info('creating folder \''+folder_name+'\'... ')
@@ -162,7 +173,8 @@ def create_folder(folder_name, parents_list=None):
     except Exception as e:
         logger.error('Exception: \'Folder not created\' - '+str(e))
         sys.exit(2)
-        
+
+
 def create_folder_path(folder_list):
     folder_path = ''
     for folder in folder_list:
@@ -181,7 +193,8 @@ def create_folder_path(folder_list):
         
     logger.info('PATH CREATION SUCCESSFUL')
     return parents_list
-    
+
+
 def create_file(upload_file_name, upload_file_path, parent_folder_path, upload_file_description=None):
     global n
     
@@ -226,7 +239,8 @@ def create_file(upload_file_name, upload_file_path, parent_folder_path, upload_f
         except Exception as e:
             logger.error('Exception: '+str(e))
             logger.info('file creation failed!!!')
-    
+
+
 def callback(request_id, response, exception):
     if exception:
         # Handle error
@@ -234,7 +248,8 @@ def callback(request_id, response, exception):
         logger.info('file not shared!!!')
     else:
         logger.info('Permission Id: '+response.get('id'))
-    
+
+
 def share_file(file_id):
     logger.info('sharing file...')
     batch = drive_service.new_batch_http_request(callback=callback)
@@ -262,7 +277,8 @@ def share_file(file_id):
     # ))
     
     batch.execute()
-    
+
+
 def upload_files(entered_date):
     # today = datetime.datetime.now().strftime("%d/%b/%Y").split("-")                           # ['date', 'month', 'year']
     global m
@@ -298,7 +314,8 @@ def upload_files(entered_date):
             
     logger.info('TOTAL FILES FOUND: '+str(m))
     logger.info('TOTAL FILES CREATED: '+str(n))
-    
+
+
 if __name__ == '__main__':
     logger.info('---------------------------------------------------------------------------------------------------')
 
