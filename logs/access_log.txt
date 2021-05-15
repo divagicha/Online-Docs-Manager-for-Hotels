@@ -1,0 +1,13 @@
+[2021-01-06 23:44:26 - UPL - MainThread - INFO    ] - ---------------------------------------------------------------------------------------------------
+[2021-01-06 23:44:26 - UPL - MainThread - INFO    ] - setting scope...
+[2021-01-06 23:44:26 - UPL - MainThread - INFO    ] - initialising credentials object
+[2021-01-06 23:44:26 - UPL - MainThread - INFO    ] - applying necessary credential headers for authorizing request
+[2021-01-06 23:44:26 - UPL - MainThread - INFO    ] - initialising service object...
+[2021-01-06 23:44:29 - UPL - MainThread - INFO    ] - validating date '6/1/2021'
+[2021-01-06 23:44:29 - UPL - MainThread - INFO    ] - using date '2021\Jan\06'
+[2021-01-06 23:44:29 - UPL - MainThread - INFO    ] - OPERATION: READ (starting...)
+[2021-01-06 23:44:29 - UPL - MainThread - INFO    ] - making API request
+[2021-01-06 23:44:29 - UPL - MainThread - INFO    ] - fetching files from 'IDs\2021\Jan\06'...
+[2021-01-06 23:44:29 - UPL - MainThread - INFO    ] - query: "mimeType contains 'image' AND fullText contains 'IDs\\2021\\Jan\\06'"
+[2021-01-06 23:44:29 - UPL - MainThread - INFO    ] - 4 FILES FOUND
+[2021-01-06 23:44:29 - UPL - MainThread - INFO    ] - RESPONSE --> {'files': [{'id': '1WzM9jCXdiMYwA2CGLVhJij6JlvhpNViP', 'name': '101-D.jpg', 'mimeType': 'image/jpeg', 'description': 'IDs\\2021\\Jan\\06'}, {'id': '1awUsXr_dijK6kAUTctQIQwwNGm6mvw_L', 'name': '101-C.jpg', 'mimeType': 'image/jpeg', 'description': 'IDs\\2021\\Jan\\06'}, {'id': '1KktvgH2CyplR645oOfB6ufCMMDGQSPOA', 'name': '101-B.jpg', 'mimeType': 'image/jpeg', 'description': 'IDs\\2021\\Jan\\06'}, {'id': '1bP55fAJEXbuR30PqXXLZmzlRJQvVCHOq', 'name': '101-A.jpg', 'mimeType': 'image/jpeg', 'description': 'IDs\\2021\\Jan\\06'}]}

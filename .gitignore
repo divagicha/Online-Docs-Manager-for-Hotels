@@ -1,0 +1,5 @@
+__pycache__/*
+venv-py3/*
+logs/*.txt.*
+Extras/client*.json
+Extras/quickstart.py
