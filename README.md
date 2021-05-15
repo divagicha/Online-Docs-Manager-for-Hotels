@@ -33,11 +33,11 @@
 		<br />
 		<a href="https://github.com/DivAgicha/Online-Docs-Manager-for-Hotels"><strong>Explore the docs »</strong></a>
 		<br />
-		<br />		·
+		<br />
 		<a href="mailto:div.agicha@gmail.com">Report Bug</a>
 		·
 		<a href="mailto:div.agicha@gmail.com">Request Feature</a>
-	</p>
+</p>
 
 
 
